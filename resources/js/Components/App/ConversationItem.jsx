@@ -38,7 +38,7 @@ const ConversationItem = ({
             // inertia js prop that preserve the state of current component so it does not reload the entire page
             preserveState
             className={
-                "conversation-item flex items-center gap-2 p-2 text-gray-300 transition-all cursor-pointer hover:bg-black/30" +
+                "conversation-item flex items-center gap-2 p-2 pl-4 text-gray-300 transition-all cursor-pointer hover:bg-black/30 " +
                 classes +
                 (conversation.is_user && currentUser.is_admin
                     ? " pr-2"
