@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\MessageResource;
+use App\Models\MessageAttatchment;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Group;
 use App\Models\Message;
+use App\Models\Conversation;
 use App\Http\Requests\StoreMessageRequest;
 
 class MessageController extends Controller
@@ -32,7 +34,7 @@ class MessageController extends Controller
     {
         $messages = Message::where('group_id', $group->id)
             ->latest()
-            ->paginate(50);
+            ->paginate(10);
 
         return inertia('Home', [
             'selectedConversation' => $group->toConversationArray(),
